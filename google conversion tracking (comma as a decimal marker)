@@ -1,0 +1,20 @@
+<!-- Add this code to the additional scripts under 'Checkout' in Shopify -->
+
+<!-- Global site tag (gtag.js) - Google Ads: XXXXXXXXX -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-XXXXXXXXX');
+</script>
+<!-- Event snippet for Google Shopping App Purchase conversion page for EURO-->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-XXXXXXXXX/abcdefghij1234567890',
+      'value': {{ total_price | money_without_currency | replace: ',', '.' }},
+      'currency': 'EUR',
+      'transaction_id': '{{ order.order_number }}'
+  });
+</script>
